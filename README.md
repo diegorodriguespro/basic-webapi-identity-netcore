@@ -14,7 +14,8 @@ Tabela de conteúdos
       * [Instalação](#instalação)  
       * [Executar](#executar)  
    * [Tecnologias](#tecnologias)
-   * [Estrutura do projeto](./docs/estrutura.md)
+   * [Estrutura do projeto](./Docs/estrutura.md)
+   * [Detalhes](./Docs/detalhes.md)
 <!--te-->
 
 ## Sobre
@@ -45,26 +46,26 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ### Instalação
 
-- Clonando o respositório
+Clonando o respositório
 
 ```bash
 # Clone este repositório
 $ git clone https://github.com/diegorodriguespro/basic-webapi-identity-netcore
 ```
 
-- instalar a CLI do *EntityFramework*
-- somente se ela já não estiver sido instalada
+Instalar a CLI do *EntityFramework*
+Somente se ela já não estiver sido instalada
 ```bash
 dotnet tool install --global dotnet-ef
 ```
 
-- Acessar a pasta do projeto
+Acessar a pasta do projeto
 ```bash
 # Acesse a pasta do projeto no terminal/cmd
 $ cd basic-webapi-identity-netcore
 ```
 
-- Reinstalar dependências
+Reinstalar dependências
 
 ```bash
 $ dotnet restore
@@ -72,18 +73,18 @@ $ dotnet restore
 $ dotnet build
 ```
 
-- Criar e atualizar banco de dados
+Criar e atualizar banco de dados
 Crie um banco de dados no PostgreSQL, depois de criado, altere a string de conexão.
 
-- Alterar a string de conexão
+Alterar a string de conexão
 Alterar o arquivo **appsettings.json** onde fica armazenada a string de conexão. Alterar para a localização do seu banco de dados.
 ```JSON
 "ConnectionStrings": {		    "Default": "Provider=PostgreSQL OLE DB Provider;Data Source=0.0.0.0;location=databasename;User ID=dbuser;password=dbuserpassword;timeout=1000;" 
  }
 ```
 
--  Atualize o banco de dados
--  Este comando irá criar a estrutura de tabelas de usuários no banco de dados. 
+Atualize o banco de dados
+Este comando irá criar a estrutura de tabelas de usuários no banco de dados. 
 ```bash
 dotnet ef database update -v
 ```
@@ -98,11 +99,11 @@ $ dotnet run
 # O servidor inciará na porta:5000 - acesse <http://localhost:5000>
 ```
 
-### [Estrutura](./docs/estrutura.md)
+### [Estrutura](./Docs/estrutura.md)
 Estrutura do projeto e descrição das classes 
 
-### [Instalação](./docs/instalacao.md)
-Preparação e instalação do ambiente
+### [Detalhes](./Docs/detalhes.md)
+Detalhes e instruções sobre o projeto, consulte para maiores informações
 
 
 
