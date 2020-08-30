@@ -10,10 +10,11 @@ Tabela de conteúdos
 <!--ts-->
    * [Sobre](#Sobre)   
    * [Como usar](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
-      * [Instalação](#instalacao)   
+      * [Pre Requisitos](#pré-requisitos)
+      * [Instalação](#instalação)  
+      * [Executar](#executar)  
    * [Tecnologias](#tecnologias)
-   * [Estrutura do projeto](docs/estrutura.md)
+   * [Estrutura do projeto](./docs/estrutura.md)
 <!--te-->
 
 ## Sobre
@@ -42,37 +43,65 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 O banco de dados utilizado foi o [Postgres](https://www.postgresql.org/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Clonando o respositório
+### Instalação
+
+- Clonando o respositório
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/diegorodriguespro/basic-webapi-identity-netcore>
+$ git clone https://github.com/diegorodriguespro/basic-webapi-identity-netcore
 ```
 
-### Alterar a string de conexão
-Alterar o arquivo **appsettings.json** onde fica armazenada a string de conexão. Alterar para a localização do seu banco de dados.
+- instalar a CLI do *EntityFramework*
+- somente se ela já não estiver sido instalada
+```bash
+dotnet tool install --global dotnet-ef
 ```
+
+- Acessar a pasta do projeto
+```bash
+# Acesse a pasta do projeto no terminal/cmd
+$ cd basic-webapi-identity-netcore
+```
+
+- Reinstalar dependências
+
+```bash
+$ dotnet restore
+
+$ dotnet build
+```
+
+- Criar e atualizar banco de dados
+Crie um banco de dados no PostgreSQL, depois de criado, altere a string de conexão.
+
+- Alterar a string de conexão
+Alterar o arquivo **appsettings.json** onde fica armazenada a string de conexão. Alterar para a localização do seu banco de dados.
+```JSON
 "ConnectionStrings": {		    "Default": "Provider=PostgreSQL OLE DB Provider;Data Source=0.0.0.0;location=databasename;User ID=dbuser;password=dbuserpassword;timeout=1000;" 
  }
 ```
 
+-  Atualize o banco de dados
+-  Este comando irá criar a estrutura de tabelas de usuários no banco de dados. 
+```bash
+dotnet ef database update -v
+```
 
-### Executando a API
+### Executar
+Executando a API
 
 ```bash
-# Acesse a pasta do projeto no terminal/cmd
-$ cd basic-webapi-identity-netcore
-
 # Execute a aplicação em modo de desenvolvimento
 $ dotnet run
 
 # O servidor inciará na porta:5000 - acesse <http://localhost:5000>
 ```
 
-### [Estrutura](docs/estrutura.md)
+### [Estrutura](./docs/estrutura.md)
 Estrutura do projeto e descrição das classes 
 
-### [Instalação](docs/instalacao.md)
+### [Instalação](./docs/instalacao.md)
 Preparação e instalação do ambiente
 
 

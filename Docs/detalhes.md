@@ -8,7 +8,7 @@ Para criar um novo projeto .net core utilizar o seguinte comando:
 **dotnet new** *tipo-do-projeto* *nome-do-projeto*
 
 Exemplo:
-```
+```bash
 dotnet new web-api basic-webapi-identity-netcore
 ```
 
@@ -19,7 +19,7 @@ Para instalar um pacote dentro do projeto, utilizar o instalador do dotnet:
 **dotnet add package** *nome-do-pacote*
 
 Exemplo: 
-```
+```bash
 dotnet add package Microsoft.AspNetCore.Identity
 ```
 
@@ -27,7 +27,7 @@ dotnet add package Microsoft.AspNetCore.Identity
 
 Para poder utilizar o *Identity Framework* dentro do projeto é necessário fazer a instalação do seu pacote através do instalador de pacotes do dotnet:
 
-```
+```bash
 dotnet add package Microsoft.AspNetCore.Identity
 ```
 
@@ -39,13 +39,13 @@ Mais detalhes em: [Identity Asp.Net Core](https://docs.microsoft.com/pt-br/aspne
 
 Para poder utilizar o *Entity Framework* dentro do projeto é necessário fazer a instalação do seu pacote através do instalador de pacotes do dotnet:
 
-```
+```bash
 dotnet add package Microsoft.EntityFrameworkCore
 ```
 
 Além da instalação do *EntityFramework* é necessário fazer a instalação de outro pacote o **Microsoft.AspNetCore.Identity.EntityFrameworkCore** ele irá fazer a comunicação entre as classes do *Identity* e do *Entity*.
 
-```
+```bash
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 ```
 
@@ -58,7 +58,7 @@ Mais informações: [Entity Framework Core](https://docs.microsoft.com/pt-br/ef/
 
 Para poder utilizar o *Migrations* dentro do projeto é necessário fazer a instalação do seu pacote através do instalador de pacotes do dotnet:
 
-```
+```bash
 dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 
@@ -73,7 +73,7 @@ Mais informações em: [Migrations Overview](https://docs.microsoft.com/pt-br/ef
 
 Para poder executar comandos atravé da linha de comandos (CLI)  para o *Entity Framework* é necessário fazer a instalação das ferramentas através do instalador do *net core*:
 
-```
+```bash
 dotnet tool install --global dotnet-ef
 ```
 
@@ -81,12 +81,12 @@ Após a instalação dessa ferramenta será possível executar os comandos para 
 - Como por exemplo o comando **database update**, que irá aplicar as alterações no banco de dados, quando forem alteradas as classes.
 
 - Criação de uma nova versão:
-```
+```bash
 dotnet ef migrations add inicial
 ```
 
 - Atualizando o banco de dados:
-```
+```bash
 dotnet ef database update -v
 ```
 
@@ -95,14 +95,14 @@ dotnet ef database update -v
 
 Para poder utilizar o banco de dados PostgreSql é necessário fazer a instalação do seu pacote através do instalador de pacotes do dotnet:
 
-```
+```bash
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 ```
 
 Esse pacote irá fazer a comunicação com o banco de dados do tipo PostgreSQL, mas nada impede que outros bancos de dados sejam utilizados como o MySql, desde que sejam instalados os seus respecitvos pacotes.
 
 - *(Opcional)* Para alterar o banco de dados, altere o arquivo *StartUp.cs*
-```
+```c#
 services.AddDbContext<ApplicationDBContext>(o => o.UseNpgsql(connString));
 ```
 - Não se esqueça também de alterar a connection string.
